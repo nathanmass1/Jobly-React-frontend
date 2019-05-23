@@ -7,8 +7,8 @@ import Nav from './Components/Nav'
 import Routes from './Components/Routes'
 
 
-
 class App extends Component {
+  
   render() {
     return (
       <BrowserRouter>

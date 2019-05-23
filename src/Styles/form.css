@@ -1,0 +1,17 @@
+form{
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  background-color: #007BFF;
+  color: white;
+ 
+}
+
+input{
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  border: 2px solid lightgrey;
+}

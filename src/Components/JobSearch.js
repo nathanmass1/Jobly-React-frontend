@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import '../Styles/form.css'
 
-
 export default class Search extends Component {
   constructor(props) {
     super(props);
@@ -18,10 +17,7 @@ export default class Search extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.searchCompanies(this.state.searchTerm);
-    this.setState({
-      searchTerm: ""
-    });
+    this.props.searchJobs(this.state.searchTerm);
   }
 
   render() {

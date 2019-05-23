@@ -9,6 +9,24 @@ import Login from './Login'
 
 
 export default class Routes extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      loggedIn: false
+    }
+    this.handleLogin = this.handleLogin.bind(this);
+  }
+
+  handleLogin(token){
+    if(localStorage.token){
+      this.setState({
+        loggedIn: true
+      }) 
+    }
+  }
+
+
   render() {
     return (
       <Switch>
@@ -21,7 +39,7 @@ export default class Routes extends Component {
         <Route exact path ="/profile"
         render = {routerProps => <Profile {...routerProps}/>} />
         <Route exact path ="/login"
-        render = {routerProps => <Login {...routerProps}/>} />
+        render = {routerProps => <Login handleLogin={this.handleLogin} {...routerProps}/>} />
 
 
       </Switch>

@@ -6,7 +6,6 @@ import '../Styles/company.css'
 export default class Company extends Component {
   render() {
     const styleObj = {width: "auto"}
-    console.log("HANDLE", this.props.handle); 
     
     return (
       <Link to={`/companies/${this.props.handle}`}>
