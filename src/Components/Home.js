@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import '../Styles/home.css';
+import { Link } from "react-router-dom";
+
 
 
 
@@ -28,9 +30,8 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home-page">
-      <h1 className="test">Hello</h1>
         <h1>Welcome to Jobly (Home) </h1> 
-        <button className = {this.state.className}>Log In</button>
+        <Link to="/login"><button className = {this.state.className}>Log In</button></Link>
       </div>
     )
   }

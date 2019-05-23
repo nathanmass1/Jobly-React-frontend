@@ -24,13 +24,16 @@ export default class Login extends Component {
     evt.preventDefault();
     let token = await JoblyApi.getToken(this.state);
     localStorage.setItem('token', JSON.stringify(token));
-    this.props.handleLoginForm();
+    let user = await JoblyApi.validateUser(this.state.username);
+
+    this.props.handleLoginForm(user);
   }
 
 
 
 
   render() {
+    //Send token to server. Need to have boolean loading in state.
     if(localStorage.token){
       return <Redirect to='/jobs'/>
     }

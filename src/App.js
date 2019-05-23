@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       loggedIn: false
     }
-    this.handleLogin = this.handleLogin.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
     this.handleLoginForm = this.handleLoginForm.bind(this);
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
     }
   }
 
-  handleLogin() {
+  handleLogout() {
     if (localStorage.token) {
       localStorage.clear();
       this.setState({
@@ -33,8 +33,8 @@ class App extends Component {
     } 
   }
 
-  handleLoginForm(){
-    if (localStorage.token) {
+  handleLoginForm(user){
+    if (localStorage.token && user) {    
       this.setState({
         loggedIn: true
       })
@@ -45,7 +45,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
-          <Nav  handleLogin={this.handleLogin} loggedIn={this.state.loggedIn} />
+          <Nav  handleLogout={this.handleLogout} loggedIn={this.state.loggedIn} />
           <Routes handleLoginForm = {this.handleLoginForm} loggedIn={this.state.loggedIn} />
         </div>
       </BrowserRouter>

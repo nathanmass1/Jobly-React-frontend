@@ -66,6 +66,12 @@ class JoblyApi {
     return res.token;
 
   }
+
+  static async validateUser(username){
+    let res = await this.request(`users/${username}`, { ...username }, 'get');
+    console.log(res.user);
+    return res.user.username;
+  }
 }
 
 export default JoblyApi;

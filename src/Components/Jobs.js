@@ -43,7 +43,7 @@ export default class Jobs extends Component {
         <JobSearch searchJobs={this.searchJobs}/>
         <ol>
         {this.state.jobs.map(job => (
-          <Job name = {job.title} salary={job.salary} equity={job.equity}  />
+          <Job name = {job.title} salary={job.salary} equity={job.equity} key={job.id}/>
         ))}
         </ol>
       </div>

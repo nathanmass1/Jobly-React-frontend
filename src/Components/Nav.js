@@ -8,7 +8,6 @@ class Nav extends Component {
 
   render() {
     return (
-      //NEED TO SWITCH LOGIN BUTTON AFTER LOGIN TO LOGOUT.
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">Jobly</Link><span className="sr-only">(current)</span>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,10 +25,10 @@ class Nav extends Component {
               <Link className="nav-link" to="/profile">Profile</Link>
             </li>
             <li className="nav-item">
-              <Link onClick= {this.props.handleLogin} className="nav-link" to="/login">{this.props.loggedIn ? 'Logout' : 'Login'}</Link>
+              <Link onClick= {this.props.handleLogout} className="nav-link" to="/login">{this.props.loggedIn ? 'Logout' : 'Login'}</Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to="/register">Register</Link>
+            <Link className="nav-link" to="/register">{this.props.loggedIn ? '' : 'Register'}</Link>
           </li>
             
           </ul>
