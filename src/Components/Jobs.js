@@ -3,10 +3,6 @@ import Job from './Job';
 import JoblyApi from '../JoblyApi';
 import JobSearch from './JobSearch';
 
-
-
-
-
 export default class Jobs extends Component {
 
   constructor(props) {

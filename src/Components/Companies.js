@@ -34,7 +34,6 @@ export default class Companies extends Component {
 
   render() {
     const {companies} = this.state
-    // console.log(companies[0].logo_url);
 
     return (
       <div className="companies-page">

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import JoblyApi from '../JoblyApi';
 import { Redirect } from 'react-router-dom';
+import Job from './Job';
 
 
 export default class Login extends Component {
@@ -27,10 +28,9 @@ export default class Login extends Component {
     evt.preventDefault();
     let token = await JoblyApi.getNewUserToken(this.state);
     localStorage.setItem('token', JSON.stringify(token));
-    this.props.handleLoginForm();
+    let user = await JoblyApi.validateUser(this.state.username);
+    this.props.handleLoginForm(user);
   }
-
-
 
 
   render() {

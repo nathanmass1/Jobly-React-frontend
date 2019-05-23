@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
+import CompanyPage from './CompanyPage'
 
 import '../Styles/company.css'
 
