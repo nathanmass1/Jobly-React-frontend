@@ -24,8 +24,7 @@ export default class Login extends Component {
     evt.preventDefault();
     let token = await JoblyApi.getToken(this.state);
     localStorage.setItem('token', JSON.stringify(token));
-    this.props.handleLogin(token);
-
+    this.props.handleLoginForm();
   }
 
 

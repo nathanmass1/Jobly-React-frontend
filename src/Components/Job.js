@@ -11,7 +11,7 @@ export default class Job extends Component {
           <h5 className="card-title">{this.props.name}</h5>
           <p className="card-text">Salary: {this.props.salary}</p>
           <p className="card-text">Equity: {this.props.equity}</p>
-          <button type="button" class="btn btn-primary" style={{ width: "100px", margin: "0 auto" }}>Apply</button>
+          <button type="button" className="btn btn-primary" style={{ width: "100px", margin: "0 auto" }}>Apply</button>
         </div>
       </div>
     )

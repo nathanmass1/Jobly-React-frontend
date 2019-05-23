@@ -5,26 +5,21 @@ import Companies from './Companies'
 import Jobs from './Jobs'
 import Profile from './Profile'
 import Login from './Login'
+import Register from './Register';
 
 
 
 export default class Routes extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      loggedIn: false
-    }
-    this.handleLogin = this.handleLogin.bind(this);
-  }
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     loggedIn: false
+  //   }
+  //   this.handleLogin = this.handleLogin.bind(this);
+  // }
 
-  handleLogin(token){
-    if(localStorage.token){
-      this.setState({
-        loggedIn: true
-      }) 
-    }
-  }
+
 
 
   render() {
@@ -39,7 +34,9 @@ export default class Routes extends Component {
         <Route exact path ="/profile"
         render = {routerProps => <Profile {...routerProps}/>} />
         <Route exact path ="/login"
-        render = {routerProps => <Login handleLogin={this.handleLogin} {...routerProps}/>} />
+        render = {routerProps => <Login handleLoginForm={this.props.handleLoginForm} {...routerProps}/>} />
+        <Route exact path ="/register"
+        render = {routerProps => <Register handleLoginForm={this.props.handleLoginForm} {...routerProps}/>} />
 
 
       </Switch>
