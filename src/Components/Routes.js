@@ -24,7 +24,8 @@ export default class Routes extends Component {
           render={routerProps => this.props.currentUser.loggedIn ? <Jobs {...routerProps} /> : <Redirect to="/login" />
           } />
         <Route exact path="/profile"
-          render={routerProps => <Profile {...routerProps} />} />
+          render={routerProps => this.props.currentUser.loggedIn ? <Profile {...routerProps} /> : <Redirect to="/login" />
+        } />
         <Route exact path="/login"
           render={routerProps => <Login currentUser={this.props.currentUser} handleLoginForm={this.props.handleLoginForm} {...routerProps} />} />
         <Route exact path="/register"
