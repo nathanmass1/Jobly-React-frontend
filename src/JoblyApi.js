@@ -69,7 +69,6 @@ class JoblyApi {
 
   static async validateUser(username){
     let res = await this.request(`users/${username}`, { ...username }, 'get');
-    console.log(res.user);
     return res.user.username;
   }
 
@@ -79,9 +78,14 @@ class JoblyApi {
   }
 
   static async updateUser(username, userInfo) {
-    console.log("UPDATE USER",{...userInfo});
     let res = await this.request(`users/${username}`, {...userInfo}, 'patch')
     return res.user;
+  }
+
+  static async apply(jobId, username, state){
+    let res = await this.request(`jobs/${jobId}/apply`, {jobId, username, state}, 'post')
+    console.log(res)
+    return res;
   }
 
 
